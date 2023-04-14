@@ -27,6 +27,7 @@ Aplicação utilizando uma API do Rick and Morty, para gerar uma tela com uma li
 #### Construção da Camada Data
 - Criado a pasta api com a interface com o endpoint e o método para realizar a requisição;
 - Criado a pasta model com o data class com o que pode ser requisitado no endpoint;
-- Criado a pasta repositor com a interface que será usado em outras camadas e a implementação com o método que fará a requisição.
+- Criado a pasta datasource com a interface que será utilizada pelo repository e a implementação contém o método para fazer a requisição ao endpoint;
+- Criado a pasta repository com a interface que será usado em outras camadas e a implementação com o método que aponta para o datasource, neste caso usando os dados que estão na api.
 
 ## ScreenShots
