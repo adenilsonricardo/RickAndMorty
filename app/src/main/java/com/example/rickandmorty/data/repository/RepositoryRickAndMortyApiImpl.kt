@@ -7,9 +7,9 @@ import kotlinx.coroutines.flow.flow
 
 class RepositoryRickAndMortyApiImpl(
     private val serviceApi: RickAndMortyApi
-): RepositoryRickAndMortyApi {
+) : RepositoryRickAndMortyApi {
     override fun listCharacters(): Flow<ListCharactersModel> {
-        return flow{
+        return flow {
             emit(serviceApi.listCharacters())
         }
     }

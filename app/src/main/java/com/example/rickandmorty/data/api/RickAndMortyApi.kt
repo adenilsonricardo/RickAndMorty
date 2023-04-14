@@ -9,7 +9,7 @@ interface RickAndMortyApi {
 
     suspend fun listCharacters(): ListCharactersModel
 
-    object PatchConstants{
+    object PatchConstants {
         const val LISTCHARACTERS = "character"
     }
 }
