@@ -1,7 +1,7 @@
 # RickAndMorty
 
 ## Sobre
-Aplicação utilizando uma API do Rick and Morty, para gerar uma tela com uma lista de personagens através do endpoint.
+Aplicação utilizando uma API do Rick and Morty, para gerar uma tela com uma lista personagens e uma segunda tela com detalhes de um único personagem da lista.
 
 ## Objetivo
 - Consumo de uma API;
