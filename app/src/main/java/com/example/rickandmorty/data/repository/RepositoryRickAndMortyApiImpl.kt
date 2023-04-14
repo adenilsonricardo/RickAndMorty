@@ -1,16 +1,13 @@
 package com.example.rickandmorty.data.repository
 
-import com.example.rickandmorty.data.api.RickAndMortyApi
+import com.example.rickandmorty.data.datasource.RickAndMortyListCharacterDataSource
 import com.example.rickandmorty.data.model.ListCharactersModel
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
 
 class RepositoryRickAndMortyApiImpl(
-    private val serviceApi: RickAndMortyApi
+    private val serviceDataSource: RickAndMortyListCharacterDataSource
 ) : RepositoryRickAndMortyApi {
-    override fun getListCharacters(): Flow<ListCharactersModel> {
-        return flow {
-            emit(serviceApi.getListCharacters())
-        }
+    override suspend fun getListCharacters(): Flow<ListCharactersModel> {
+        return serviceDataSource.getListCharacters()
     }
 }
