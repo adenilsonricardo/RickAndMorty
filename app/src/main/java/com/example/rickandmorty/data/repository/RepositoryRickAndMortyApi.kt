@@ -4,5 +4,5 @@ import com.example.rickandmorty.data.model.ListCharactersModel
 import kotlinx.coroutines.flow.Flow
 
 interface RepositoryRickAndMortyApi {
-    fun listCharacters(): Flow<ListCharactersModel>
+    fun getListCharacters(): Flow<ListCharactersModel>
 }

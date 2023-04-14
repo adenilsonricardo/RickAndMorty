@@ -7,7 +7,7 @@ import retrofit2.http.GET
 interface RickAndMortyApi {
     @GET(LISTCHARACTERS)
 
-    suspend fun listCharacters(): ListCharactersModel
+    suspend fun getListCharacters(): ListCharactersModel
 
     object PatchConstants {
         const val LISTCHARACTERS = "character"
