@@ -1,4 +1,4 @@
-# RickAndMorty
+# RickAndMortyCleanArch+MVVM
 
 ## Sobre
 Aplicação utilizando uma API do Rick and Morty, para gerar uma tela com uma lista personagens e uma segunda tela com detalhes de um único personagem da lista.
