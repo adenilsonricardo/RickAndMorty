@@ -8,12 +8,12 @@ import com.example.rickandmorty.domain.model.ListCharacters
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class RepositoryRickAndMortyApiImpl(
+class RepositoryRickAndMortyImpl(
     private val serviceDataSource: RickAndMortyListCharacterDataSource,
     private val listCharactersMapper: ListCharactersMapper
-) : RepositoryRickAndMortyApi {
+) : RepositoryRickAndMorty {
     @RequiresApi(Build.VERSION_CODES.N)
     override suspend fun getListCharacters(): Flow<ListCharacters> {
-        return serviceDataSource.getListCharacters().map (listCharactersMapper::map)
+        return serviceDataSource.getListCharacters().map(listCharactersMapper::map)
     }
 }
