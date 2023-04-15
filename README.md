@@ -36,4 +36,11 @@ Aplicação utilizando uma API do Rick and Morty, para gerar uma tela com uma li
 - Criado repository com a interface para utilizar em domain;
 - Criado usecase com a regra de negócio.
 
+### 3ª Etapa
+#### Construção do layout
+- Utilizado FragmentContainerView na activity_main;
+- Criado fragment_list_characters utilizando RecyclerView para a lista de personagens;
+- Criado list_characters para definir como serão exibido os personagens, utilizado cardView para colocar os conteudos de cadas personagem;
+- Utilizado ConstraintLayout para marcar as posições das ferramentas de layout utilizadas.
+
 ## ScreenShots
