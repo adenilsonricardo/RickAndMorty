@@ -30,4 +30,10 @@ Aplicação utilizando uma API do Rick and Morty, para gerar uma tela com uma li
 - Criado a pasta datasource com a interface que será utilizada pelo repository e a implementação contém o método para fazer a requisição ao endpoint;
 - Criado a pasta repository com a interface que será usado em outras camadas e a implementação com o método que aponta para o datasource, neste caso usando os dados que estão na api.
 
+### 2ª Etapa
+#### Construção da Camada Domain
+- Criado model com os objetos de domain para a camada de presentation;
+- Criado repository com a interface para utilizar em domain;
+- Criado usecase com a regra de negócio.
+
 ## ScreenShots
