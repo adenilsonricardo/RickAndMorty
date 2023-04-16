@@ -9,5 +9,5 @@
         android:id="@+id/listCharactersFragment"
         android:name="com.example.rickandmorty.presentation.view.ListCharactersFragment"
         android:label="fragment_list_characters"
-        tools:layout="@layout/fragment_list_characters" />
+        tools:layout="@layout/fragment_list_characters"></fragment>
 </navigation>

@@ -1,7 +1,10 @@
 package com.example.rickandmorty.di
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.example.rickandmorty.data.datasource.RickAndMortyListCharacterDataSource
 import com.example.rickandmorty.data.datasource.RickAndMortyListCharacterDataSourceImpl
+import com.example.rickandmorty.data.mapper.ListCharactersMapper
 import com.example.rickandmorty.data.repository.RepositoryRickAndMorty
 import com.example.rickandmorty.data.repository.RepositoryRickAndMortyImpl
 import com.example.rickandmorty.domain.usecase.ListCharactersUseCase
@@ -12,6 +15,7 @@ import org.koin.dsl.module
 
 class ListCharactersModule : FeatureModule() {
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override val dataModule = module {
         factory { RetrofitService.service }
 
@@ -20,6 +24,7 @@ class ListCharactersModule : FeatureModule() {
                 apiService = get()
             )
         }
+        factory { ListCharactersMapper() }
 
         factory<RepositoryRickAndMorty> {
             RepositoryRickAndMortyImpl(
@@ -27,6 +32,8 @@ class ListCharactersModule : FeatureModule() {
                 listCharactersMapper = get()
             )
         }
+
+
     }
 
     override val domainModule = module {
@@ -34,6 +41,11 @@ class ListCharactersModule : FeatureModule() {
     }
 
     override val presentationModule = module {
-        viewModel { ListCharactersViewModel(listCharactersUseCase = get()) }
+        viewModel {
+            ListCharactersViewModel(
+                listCharactersUseCase = get(),
+                coroutinesDispatcher = get()
+            )
+        }
     }
 }
