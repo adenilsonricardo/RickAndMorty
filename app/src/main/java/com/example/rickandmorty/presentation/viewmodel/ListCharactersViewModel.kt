@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.rickandmorty.domain.model.ListCharacters
 import com.example.rickandmorty.domain.usecase.ListCharactersUseCase
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flowOn
@@ -13,7 +14,7 @@ import kotlinx.coroutines.launch
 
 class ListCharactersViewModel(
     private val listCharactersUseCase: ListCharactersUseCase,
-//    private val coroutinesDispatcher: CoroutineDispatcher = Dispatchers.IO
+    private val coroutinesDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : ViewModel() {
     val _listCharacters: MutableLiveData<ListCharacters> = MutableLiveData()
     val listCharacters: LiveData<ListCharacters> = _listCharacters
@@ -28,7 +29,7 @@ class ListCharactersViewModel(
     fun getListCharacters() {
         viewModelScope.launch {
             listCharactersUseCase()
-                .flowOn(Dispatchers.IO)
+                .flowOn(coroutinesDispatcher)
                 .catch { exception -> _error.value = exception.message }
                 .collect { _listCharacters.value = it }
         }

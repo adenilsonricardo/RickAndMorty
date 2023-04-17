@@ -43,10 +43,4 @@ class ListCharactersAdapter(
     override fun getItemCount(): Int {
         return listCharacters.size
     }
-
-    //@SuppressLint("NotifyDataSetChanged")
-    fun updateList(newList: MutableList<ListCharacters.ResponseApi>) {
-        listCharacters = newList
-        notifyDataSetChanged()
-    }
 }
