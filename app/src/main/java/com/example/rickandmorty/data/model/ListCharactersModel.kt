@@ -8,7 +8,7 @@ data class ListCharactersModel(
     @SerialName("info")
     val info: Info,
     @SerialName("results")
-    val resultsApi: List<ResultApi>
+    val results: List<Results>
 ) {
     @Serializable
     data class Info(
@@ -23,7 +23,7 @@ data class ListCharactersModel(
     )
 
     @Serializable
-    data class ResultApi(
+    data class Results(
         @SerialName("created")
         val created: String,
         @SerialName("episode")

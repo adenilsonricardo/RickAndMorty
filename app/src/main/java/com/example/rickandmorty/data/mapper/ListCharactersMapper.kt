@@ -3,13 +3,13 @@ package com.example.rickandmorty.data.mapper
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.example.rickandmorty.data.model.ListCharactersModel
+import com.example.rickandmorty.data.model.ListCharactersModel.Results
 import com.example.rickandmorty.domain.model.ListCharacters
-import com.example.rickandmorty.utils.Mapper
-import com.example.rickandmorty.data.model.ListCharactersModel.ResultApi
 import com.example.rickandmorty.domain.model.ListCharacters.Info
 import com.example.rickandmorty.domain.model.ListCharacters.ResponseApi
 import com.example.rickandmorty.domain.model.ListCharacters.ResponseApi.Location
 import com.example.rickandmorty.domain.model.ListCharacters.ResponseApi.Origin
+import com.example.rickandmorty.utils.Mapper
 
 @RequiresApi(Build.VERSION_CODES.N)
 class ListCharactersMapper: Mapper<ListCharactersModel, ListCharacters> {
@@ -21,11 +21,11 @@ class ListCharactersMapper: Mapper<ListCharactersModel, ListCharacters> {
                 prev = source.info.prev,
                 pages = source.info.pages
             ),
-            responseApi = mapResults(source.resultsApi),
+            responseApi = mapResults(source.results),
         )
     }
 
-    private fun mapResults(objectResults: List<ResultApi>): List<ResponseApi>{
+    private fun mapResults(objectResults: List<Results>): List<ResponseApi> {
         return objectResults.map {
             ResponseApi(
                 created = it.created,

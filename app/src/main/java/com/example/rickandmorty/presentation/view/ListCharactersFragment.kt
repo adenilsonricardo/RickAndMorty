@@ -19,14 +19,14 @@ class ListCharactersFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: ListCharactersViewModel by viewModel()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.getListCharacters()
         resultsObserver()
     }
 
     private fun resultsObserver() {
-        viewModel.listCharacters.observe(this) {
+        viewModel.listCharacters.observe(viewLifecycleOwner) {
             configRv(it)
         }
     }
