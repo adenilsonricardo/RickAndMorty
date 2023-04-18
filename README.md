@@ -58,7 +58,7 @@ Aplicação utilizando uma API do Rick and Morty, para gerar uma tela com uma li
 - MyApp - Configuração do Koin no projeto
 
 ## ScreenShots
-![IlustriProject](https://user-images.githubusercontent.com/85114978/232639425-0421fbd1-60b8-4e1a-a2cc-d887cfd6db34.mp4)
+https://user-images.githubusercontent.com/85114978/232639425-0421fbd1-60b8-4e1a-a2cc-d887cfd6db34.mp4
 
 
 
